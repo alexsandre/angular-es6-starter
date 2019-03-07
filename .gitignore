@@ -1,0 +1,6 @@
+# IDE-RELATED #
+.idea/
+
+# APP-RELATED #
+dist/
+node_modules/
