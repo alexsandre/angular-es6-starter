@@ -25,7 +25,7 @@ module.exports = function(config) {
 		// test results reporter to use
 		// possible values: "dots", "progress"
 		// available reporters: https://npmjs.org/browse/keyword/karma-reporter
-		reporters: ["progress"],
+		reporters: ["progress", "coverage"],
 
 		// web server port
 		port: 9876,
@@ -52,12 +52,6 @@ module.exports = function(config) {
 		// how many browser should be started simultaneous
 		concurrency: Infinity,
 
-		webpack: require("./webpack-test.config"),
-
-		webpackMiddleware: {
-			stats: "errors-only"
-		},
-
 		plugins: [
 			require("karma-jasmine"),
 			require("karma-coverage"),
@@ -65,6 +59,19 @@ module.exports = function(config) {
 			require("karma-chrome-launcher"),
 			require("karma-webpack"),
 			require("karma-sourcemap-loader")
-		]
+		],
+
+		coverageReporter: {
+			type: "json",
+			subdir: "./coverage",
+			dir: "../dist",
+			file: "coverage.json"
+		},
+
+		webpack: require("./webpack-test.config"),
+
+		webpackMiddleware: {
+			stats: "errors-only"
+		}
 	})
 };

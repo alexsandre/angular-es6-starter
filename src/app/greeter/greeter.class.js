@@ -1,9 +1,9 @@
-export default function Greeter() {
-	var inst = this;
-	inst.message = "Hello, world!";
-	Object.defineProperty(Greeter.prototype, "greet", {
-		value: function() {
-			return inst.message;
-		}
-	});
+export default class Greeter {
+	constructor() {
+		this.message = "Hello, world!";
+	}
+
+	greet() {
+		return this.message;
+	}
 }
