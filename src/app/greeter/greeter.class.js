@@ -1,9 +1,9 @@
 export default function Greeter() {
-	var thus = this;
-	thus.message = "Hello, world!";
+	var inst = this;
+	inst.message = "Hello, world!";
 	Object.defineProperty(Greeter.prototype, "greet", {
 		value: function() {
-			return thus.message;
+			return inst.message;
 		}
 	});
 }

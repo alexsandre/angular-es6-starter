@@ -1,5 +1,5 @@
 import $ from "jquery";
-import Greeter from "./greeter.class";
+import Greeter from "./greeter/greeter.class";
 
 $(function() {
 	var greeter = new Greeter(),
