@@ -1,9 +1,17 @@
 export default class Greeter {
-	constructor() {
-		this.message = "Hello, world!";
+	constructor(translationService) {
+		this.translationService = translationService;
+	}
+
+	get language() {
+		return this._language;
+	}
+
+	set language(language) {
+		this._language = language;
 	}
 
 	greet() {
-		return this.message;
+		return this.translationService[this.language];
 	}
 }
