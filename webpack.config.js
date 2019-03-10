@@ -34,7 +34,8 @@ module.exports = {
 
 	plugins: [
 		new HtmlWebpackPlugin({
-			title: "AngularJS &amp; ES6 Starter Tooling"
+			title: "AngularJS &amp; ES6 Starter Tooling",
+			template: path.resolve(__dirname, "./src/index.html")
 		})
 	],
 };
