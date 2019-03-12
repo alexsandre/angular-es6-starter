@@ -5,6 +5,7 @@
 	"private": true,
 	"devDependencies": {
 		"@babel/core": "^7.3.4",
+		"@babel/plugin-proposal-decorators": "^7.3.0",
 		"@babel/preset-env": "^7.3.4",
 		"@types/angular": "^1.6.54",
 		"@types/jasmine": "^3.3.9",
@@ -31,13 +32,14 @@
 	},
 	"dependencies": {
 		"angular": "^1.7.7",
-		"jquery": "^3.3.1"
+		"jquery": "^3.3.1",
+		"nginject-decorator": "^0.1.0"
 	},
 	"scripts": {
 		"build:dev": "webpack --config webpack-dev.config.js",
 		"build": "webpack --config webpack-prod.config.js",
 		"start": "webpack-dev-server --config webpack-dev.config.js",
-		"start:prod": "webpack --config webpack-prod.config.js",
+		"start:prod": "webpack-dev-server --config webpack-prod.config.js",
 		"test": "karma start",
 		"test:coverage": "remap-istanbul -i ./dist/coverage/coverage.json -o ./dist/coverage/report -t html"
 	},
