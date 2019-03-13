@@ -18,12 +18,29 @@ describe("GreetingsController", function() {
 		expect(controller).toEqual(jasmine.any(GreetingsController));
 	}));
 
-	describe("$scope.message", function() {
-		it("set to 'Hello, world!' upon instantiation", angular.mock.inject(function($controller, $rootScope) {
+	describe("$scope", function() {
+		it("set title property on instantiation", angular.mock.inject(function($controller, $rootScope) {
 			let $scope = $rootScope.$new();
 			$controller("GreetingsController", {$scope});
 
-			expect($scope.message).toBe("Hello, world!");
+			expect($scope.title).toBe("angular-es6-starter");
+		}));
+
+		it("set message property on instantiation", angular.mock.inject(function($controller, $rootScope) {
+			let $scope = $rootScope.$new();
+			$controller("GreetingsController", {$scope});
+
+			expect($scope.message).toBe("Toolchain for developing Angular applications with ES6");
+		}));
+
+		it("set technologies property on instantiation", angular.mock.inject(function($controller, $rootScope) {
+			let $scope = $rootScope.$new();
+			$controller("GreetingsController", {$scope});
+
+			expect($scope.technologies).toEqual(jasmine.any(Array));
+			expect($scope.technologies).toContain("Angular");
+			expect($scope.technologies).toContain("Bootstrap");
+			expect($scope.technologies).toContain("Webpack");
 		}));
 	});
 });

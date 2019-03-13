@@ -2,11 +2,44 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"/>
 		<title><%= htmlWebpackPlugin.options.title %></title>
 	</head>
+
 	<body data-ng-app="angular-es6-starter">
-		<main class="content" data-ng-controller="GreetingsController">
-			<h1>{{message}}</h1>
-		</main>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+			<div class="container">
+				<a class="navbar-brand" href="#">angular-es6-starter</a>
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">About</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Services</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Contact</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<div class="container">
+			<main data-ng-controller="GreetingsController">
+				<div class="row">
+					<div class="col-lg-12 text-center">
+						<h1 class="mt-5">{{title}}</h1>
+						<p class="lead">{{message}}</p>
+						<div id="technologies">
+							<span class="badge" data-ng-repeat="technology in technologies"
+								  data-ng-class-even="'badge-primary'" data-ng-class-odd="'badge-secondary'">{{technology}}</span>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
 	</body>
 </html>
