@@ -1,7 +1,7 @@
 {
 	"name": "angular-es6-starter",
 	"description": "Simple 'Hello, world!' translation app built from the ground up using AngularJS and ES6 to serve as a development environment for AngularJS projects.",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"private": true,
 	"devDependencies": {
 		"@babel/core": "^7.3.4",
@@ -14,6 +14,8 @@
 		"angular-mocks": "^1.7.7",
 		"babel-loader": "^8.0.5",
 		"clean-webpack-plugin": "^2.0.0",
+		"css-loader": "^2.1.1",
+		"extract-text-webpack-plugin": "^4.0.0-beta.0",
 		"html-webpack-plugin": "^4.0.0-beta.5",
 		"istanbul-instrumenter-loader": "^3.0.1",
 		"jasmine-core": "^3.3.0",
@@ -25,6 +27,7 @@
 		"karma-sourcemap-loader": "^0.3.7",
 		"karma-webpack": "^4.0.0-rc.6",
 		"remap-istanbul": "^0.13.0",
+		"style-loader": "^0.23.1",
 		"webpack": "^4.29.6",
 		"webpack-cli": "^3.2.3",
 		"webpack-dev-server": "^3.2.1",
@@ -32,6 +35,7 @@
 	},
 	"dependencies": {
 		"angular": "^1.7.7",
+		"bootstrap": "^4.3.1",
 		"jquery": "^3.3.1",
 		"nginject-decorator": "^0.1.0"
 	},
