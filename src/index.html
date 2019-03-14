@@ -9,7 +9,10 @@
 	<body data-ng-app="angular-es6-starter">
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
 			<div class="container">
-				<a class="navbar-brand" href="#">angular-es6-starter</a>
+				<a class="navbar-brand" href="#">
+					<img src="images/angular-48.png" alt="angular-48" width="48" height="48"/>
+					angular-es6-starter
+				</a>
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item active">
 						<a class="nav-link" href="#">Home</a>
@@ -30,16 +33,34 @@
 		<div class="container">
 			<main data-ng-controller="GreetingsController">
 				<div class="row">
-					<div class="col-lg-12 text-center">
-						<h1 class="mt-5">{{title}}</h1>
-						<p class="lead">{{message}}</p>
-						<div id="technologies">
-							<span class="badge" data-ng-repeat="technology in technologies"
-								  data-ng-class-even="'badge-primary'" data-ng-class-odd="'badge-secondary'">{{technology}}</span>
+					<header class="col-sm-12 mt-5">
+						<div class="text-center">
+							<img src="images/angular-128.png" alt="angular-128" width="128" height="128"/>
+							<h1>{{title}}</h1>
+							<p class="lead">{{message}}</p>
 						</div>
+					</header>
+				</div>
+				<div class="row">
+					<div class="col-sm">&nbsp;</div>
+					<div class="col-sm text-center">
+						<h6>Built with:</h6>
+						<span class="badge" data-ng-repeat="technology in technologies"
+							  data-ng-class-even="'badge-primary'" data-ng-class-odd="'badge-secondary'">{{technology | lowercase}}</span>
 					</div>
+					<div class="col-sm">&nbsp;</div>
 				</div>
 			</main>
 		</div>
+
+		<footer class="footer bg-dark">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm text-right">
+						<span class="text-white">Copyright &copy; 2019</span>
+					</div>
+				</div>
+			</div>
+		</footer>
 	</body>
 </html>

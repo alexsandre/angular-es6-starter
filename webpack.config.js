@@ -3,6 +3,7 @@ const path = require("path");
 /**
  * Webpack Plugins
  */
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
@@ -32,7 +33,7 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.css$/,
+				test: /\.css$/i,
 				use: ExtractTextPlugin.extract({
 					fallback: "style-loader",
 					use: "css-loader"
@@ -40,7 +41,7 @@ module.exports = {
 			},
 
 			{
-				test: /\.js$/,
+				test: /\.js$/i,
 				exclude: /node_modules/,
 				loader: "babel-loader"
 			}
@@ -48,11 +49,19 @@ module.exports = {
 	},
 
 	plugins: [
+		new CopyWebpackPlugin([
+			{
+				from: path.resolve(__dirname, "./src/images/"),
+				to: path.resolve(__dirname, "./dist/images/")
+			}
+		]),
+
 		new ExtractTextPlugin(
 			"css/app.bundle.css"
 		),
 
 		new HtmlWebpackPlugin({
+			favicon: path.resolve(__dirname, "./src/favicon.ico"),
 			title: "AngularJS &amp; ES6 Starter Tooling",
 			template: path.resolve(__dirname, "./src/index.html")
 		})
