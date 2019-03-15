@@ -22,7 +22,7 @@ module.exports = {
 		splitChunks: {
 			cacheGroups: {
 				vendor: {
-					test: /[\\/]node_modules[\\/].*\.js$/,
+					test: /[\\/]node_modules[\\/].*\.js$/i,
 					name: "vendor",
 					chunks: "all"
 				},
@@ -42,7 +42,7 @@ module.exports = {
 
 			{
 				test: /\.js$/i,
-				exclude: /node_modules/,
+				exclude: /node_modules/i,
 				loader: "babel-loader"
 			}
 		]
