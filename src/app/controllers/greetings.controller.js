@@ -1,5 +1,7 @@
+import { NgController } from  "nginject-decorator";
 import NgInject from "nginject-decorator";
 
+@NgController("GreetingsController")
 @NgInject("$scope")
 export default class GreetingsController {
 	constructor($scope) {

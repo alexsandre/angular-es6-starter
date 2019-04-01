@@ -38,7 +38,7 @@
 		"angular": "^1.7.7",
 		"bootstrap": "^4.3.1",
 		"jquery": "^3.3.1",
-		"nginject-decorator": "^0.1.0"
+		"nginject-decorator": "^0.2.0"
 	},
 	"scripts": {
 		"build:dev": "webpack --config webpack-dev.config.js",
