@@ -21,10 +21,17 @@ steps:
     command: 'custom'
     customCommand: 'run build'
 
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.BinariesDirectory)/dist/'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
+
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
     azureSubscription: 'Avaliação Gratuita(0dc5d2e5-cec2-466b-bdd0-a963d86bbc10)'
     appType: 'webAppLinux'
     WebAppName: 'TestPublishAngular'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/dist/'
+    packageForLinux: '$(System.ArtifactsDirectory)/**/*.zip'
+
