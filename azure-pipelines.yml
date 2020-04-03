@@ -13,6 +13,7 @@ steps:
 - task: Npm@1
   inputs:
     command: 'install'
+    workingDir: 'angular-es6-starter'
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
@@ -20,11 +21,11 @@ steps:
   inputs:
     command: 'custom'
     customCommand: 'run build'
+    workingDir: 'angular-es6-starter'
 
 - task: PublishPipelineArtifact@1
   inputs:
-    targetPath: '$(Pipeline.Workspace)/dist'
+    targetPath: '$(Pipeline.Workspace)/angular-es6-starter/dist'
     artifact: 'CodeApp'
     publishLocation: 'pipeline'
 
-  
