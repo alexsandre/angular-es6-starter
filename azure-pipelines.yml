@@ -23,7 +23,7 @@ steps:
 
 - task: PublishPipelineArtifact@1
   inputs:
-    targetPath: '$(Pipeline.Workspace)/dist'
+    targetPath: '$(Pipeline.Workspace)'
     artifact: 'CodeApp'
     publishLocation: 'pipeline'
 
